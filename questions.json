@@ -1,56 +1,47 @@
 [
-  { "id": "q1", "text": "Are you experiencing difficulty in managing finances or paying bills?", "category": "mental" },
-  { "id": "q2", "text": "Do you frequently forget appointments or important dates?", "category": "mental" },
-  { "id": "q3", "text": "Have you experienced a decrease in your overall mental sharpness?", "category": "mental" },
-  { "id": "q4", "text": "Do you frequently lose track of current conversation topics?", "category": "mental" },
-  { "id": "q5", "text": "Are you experiencing difficulty in understanding instructions or explanations?", "category": "mental" },
-  { "id": "q6", "text": "Have you noticed a decline in your motivation or interest in previously enjoyable activities?", "category": "mental" },
-  { "id": "q7", "text": "Have others expressed concern about your memory or cognitive abilities?", "category": "mental" },
-  { "id": "q8", "text": "How would you rate your attention span?", "category": "mental" },
-  { "id": "q9", "text": "Mental fatigue?", "category": "mental" },
-  { "id": "q10", "text": "Difficulty learning new things?", "category": "mental" },
-  { "id": "q11", "text": "Difficulty staying focused and concentrating for extended periods of time?", "category": "mental" },
-  { "id": "q12", "text": "Feeling fatigued when reading sooner than in the past?", "category": "mental" },
-  { "id": "q13", "text": "Fatigue when driving sooner than in the past?", "category": "mental" },
-  { "id": "q14", "text": "Overall brain function impairs your daily life?", "category": "mental" },
-  { "id": "q15", "text": "Twitching or tremor in hands and legs when resting?", "category": "mechanical" },
-  { "id": "q16", "text": "Handwriting has gotten smaller and more crowded together?", "category": "mechanical" },
-  { "id": "q17", "text": "A loss of smell?", "category": "chemical" },
-  { "id": "q18", "text": "Difficulty staying asleep or falling asleep?", "category": "chemical" },
-  { "id": "q19", "text": "Voice has become softer?", "category": "mechanical" },
-  { "id": "q20", "text": "Facial expression that is serious or angry?", "category": "mental" },
-  { "id": "q21", "text": "Disinterest in hobbies, social activities or work?", "category": "mental" },
-  { "id": "q22", "text": "Irritable, nervous, shaky or light-headed between meals?", "category": "chemical" },
-  { "id": "q23", "text": "Wake up in the middle of the night?", "category": "chemical" },
-  { "id": "q24", "text": "Reduced function in overall hearing?", "category": "mechanical" },
-  { "id": "q25", "text": "Difficulty understanding language with background or scatter noise?", "category": "mechanical" },
-  { "id": "q26", "text": "Difficulty spelling familiar words?", "category": "mental" },
-  { "id": "q27", "text": "Noticeable difference in energy levels throughout the day?", "category": "chemical" },
-  { "id": "q28", "text": "Difficulty coordinating visual inputs and hand movements?", "category": "mechanical" },
-  { "id": "q29", "text": "Difficulty motivating yourself to start and finish tasks?", "category": "mental" },
-  { "id": "q30", "text": "A loss of attention and concentration?", "category": "mental" },
-  { "id": "q31", "text": "Frequently bumping into the wall or objects?", "category": "mechanical" },
-  { "id": "q32", "text": "How would you rate your movement speed?", "category": "mechanical" },
-  { "id": "q33", "text": "Difficulty initiating movement?", "category": "mechanical" },
-  { "id": "q34", "text": "Abnormal body movements (such as twitching legs)?", "category": "mechanical" },
-  { "id": "q35", "text": "Constant nervousness and a restless mind?", "category": "chemical" },
-  { "id": "q36", "text": "Difficulty with balance, or balance that is noticeably worse on one side?", "category": "mechanical" },
-  { "id": "q37", "text": "Low brain endurance for focus and concentration?", "category": "mental" },
-  { "id": "q38", "text": "Must wear socks at night?", "category": "chemical" },
-  { "id": "q39", "text": "Difficulty concentrating before eating?", "category": "chemical" },
-  { "id": "q40", "text": "Feel that you are not accomplishing your life's purpose?", "category": "mental" },
-  { "id": "q41", "text": "Do you have trouble remembering recent events or conversations?", "category": "mental" },
-  { "id": "q42", "text": "Are you experiencing difficulty in concentrating on tasks that require mental focus?", "category": "mental" },
-  { "id": "q43", "text": "Have you noticed a decline in your ability to make decisions or solve problems?", "category": "mental" },
-  { "id": "q44", "text": "Do you frequently misplace items like keys or glasses?", "category": "mental" },
-  { "id": "q45", "text": "Have you experienced changes in your ability to follow instructions?", "category": "mental" },
-  { "id": "q46", "text": "Are you having trouble organizing your thoughts or tasks?", "category": "mental" },
-  { "id": "q47", "text": "Do you find it challenging to recall names or faces?", "category": "mental" },
-  { "id": "q48", "text": "Have you noticed a decrease in your vocabulary or difficulty finding the right words?", "category": "mental" },
-  { "id": "q49", "text": "Are you experiencing confusion about time or location?", "category": "mental" },
-  { "id": "q50", "text": "Do you struggle with simple math calculation?", "category": "mental" },
-  { "id": "q51", "text": "Have you noticed a decline in your ability to recognize familiar people or objects?", "category": "mental" },
-  { "id": "q52", "text": "Are you experiencing difficulty in learning new information or skills?", "category": "mental" },
-  { "id": "q53", "text": "Do you frequently repeat yourself in conversations?", "category": "mental" },
-  { "id": "q54", "text": "Are there changes in your ability to perform daily tasks?", "category": "mental" }
+  {
+    "id": "q1",
+    "text": "Do you frequently forget appointments or important dates?",
+    "category": "mental"
+  },
+  {
+    "id": "q2",
+    "text": "Have you noticed a decline in your motivation or interest in previously enjoyable activities?",
+    "category": "mental"
+  },
+  {
+    "id": "q3",
+    "text": "Do you frequently misplace items like keys or glasses?",
+    "category": "mental"
+  },
+  {
+    "id": "q4",
+    "text": "Twitching or tremor in hands and legs when resting?",
+    "category": "mechanical"
+  },
+  {
+    "id": "q5",
+    "text": "Difficulty coordinating visual inputs and hand movements?",
+    "category": "mechanical"
+  },
+  {
+    "id": "q6",
+    "text": "Difficulty with balance, or balance that is noticeably worse on one side?",
+    "category": "mechanical"
+  },
+  {
+    "id": "q7",
+    "text": "Do you feel irritable, nervous, shaky or light-headed between meals?",
+    "category": "chemical"
+  },
+  {
+    "id": "q8",
+    "text": "Noticeable difference in energy levels throughout the day?",
+    "category": "chemical"
+  },
+  {
+    "id": "q9",
+    "text": "Difficulty concentrating before eating?",
+    "category": "chemical"
+  }
 ]

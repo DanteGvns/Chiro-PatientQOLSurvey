@@ -66,17 +66,27 @@ function renderBar(label, score, small = false) {
   return `
     <div style="margin-bottom: 15px;">
       <div style="font-size:${fontSize}; margin-bottom: 5px;">${label}: ${score.toFixed(1)}/10</div>
-      <div style="background:#ddd; width:100%; height:${height}; border-radius:5px; overflow:hidden;">
+      <div style="position: relative; width: 100%; height: ${height}; background: #ddd; border-radius: 5px; overflow: hidden;">
         <div style="
-          width:${filledPercent}%;
-          height:${height};
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: ${height};
           background: linear-gradient(to right,
-            red 0%, 
-            orange 20%, 
-            yellow 40%, 
-            lightgreen 70%, 
+            red 0%,
+            orange 20%,
+            yellow 40%,
+            lightgreen 70%,
             green 100%);
-          border-radius:5px;
+        "></div>
+        <div style="
+          position: absolute;
+          top: 0;
+          left: ${filledPercent}%;
+          width: ${100 - filledPercent}%;
+          height: ${height};
+          background: #ddd;
         "></div>
       </div>
     </div>
