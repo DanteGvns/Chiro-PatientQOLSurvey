@@ -9,11 +9,22 @@
 <body>
   <div class="container">
     <h1>Healthy Brain Questionnaire</h1>
-    <p>If you have any questions, call or text us @ (913) 948-6602</p>
+    <p class="centered">If you have any questions, call or text us @ (913) 948-6602</p>
     <form id="surveyForm">
-      <!-- Questions will be injected here -->
-      <button type="submit">Submit</button>
-    </form>
+  <div class="form-meta">
+    <label for="patientName">Patient Name</label>
+    <input type="text" id="patientName" name="patientName" required />
+
+    <label for="assessmentDate">Date of Assessment</label>
+    <input type="date" id="assessmentDate" name="assessmentDate" required />
+  </div>
+
+  <p class="centered">Please check the number 1–10 on all questions below.</p>
+  <p class="centered">1 = least / never, 10 = most / always</p>
+
+  <!-- Questions will be injected here -->
+  <button type="submit">Submit</button>
+</form>
 
     <div id="results" class="hidden"></div>
   </div>

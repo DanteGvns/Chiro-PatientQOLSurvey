@@ -26,6 +26,9 @@ document.getElementById("surveyForm").addEventListener("submit", async function 
   const questions = await response.json();
   const formData = new FormData(e.target);
 
+  const patientName = formData.get("patientName");
+  const assessmentDate = formData.get("assessmentDate");
+
   let scores = { mental: 0, mechanical: 0, chemical: 0 };
   let counts = { mental: 0, mechanical: 0, chemical: 0 };
 
@@ -42,15 +45,17 @@ document.getElementById("surveyForm").addEventListener("submit", async function 
     overall: (scores.mental + scores.mechanical + scores.chemical) / (counts.mental + counts.mechanical + counts.chemical)
   };
 
-  renderChart(averages);
+  renderChart(averages, patientName, assessmentDate);
 });
 
-function renderChart(data) {
+function renderChart(data, name, date) {
   document.getElementById("results").classList.remove("hidden");
 
   const container = document.getElementById("results");
   container.innerHTML = `
     <h2>Your Health Profile</h2>
+    <p><strong>Patient Name:</strong> ${name}</p>
+    <p><strong>Date of Assessment:</strong> ${date}</p>
     ${renderBar("Overall Health", data.overall)}
     ${renderBar("Mental Health", data.mental, true)}
     ${renderBar("Mechanical Health", data.mechanical, true)}
