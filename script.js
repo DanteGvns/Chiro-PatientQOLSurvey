@@ -1,30 +1,86 @@
-document.getElementById("surveyForm").addEventListener("submit", function (e) {
+async function loadQuestions() {
+  const response = await fetch("questions.json");
+  const questions = await response.json();
+  const form = document.getElementById("surveyForm");
+
+  questions.forEach(q => {
+    const wrapper = document.createElement("div");
+    wrapper.className = "question";
+    wrapper.innerHTML = `<label>${q.text}</label><div class="scale">${generateScale(q.id)}</div>`;
+    form.insertBefore(wrapper, form.lastElementChild);
+  });
+}
+
+function generateScale(name) {
+  let html = "";
+  for (let i = 1; i <= 10; i++) {
+    html += `<label><input type="radio" name="${name}" value="${i}" required />${i}</label>`;
+  }
+  return html;
+}
+
+document.getElementById("surveyForm").addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  const form = e.target;
-  const q1 = parseInt(form.q1.value);
-  const q2 = parseInt(form.q2.value);
-  const q3 = parseInt(form.q3.value);
+  const response = await fetch("questions.json");
+  const questions = await response.json();
+  const formData = new FormData(e.target);
 
-  const totalScore = q1 + q2 + q3;
+  let scores = { mental: 0, mechanical: 0, chemical: 0 };
+  let counts = { mental: 0, mechanical: 0, chemical: 0 };
 
+  questions.forEach(q => {
+    const val = parseInt(formData.get(q.id));
+    scores[q.category] += val;
+    counts[q.category]++;
+  });
+
+  const averages = {
+    mental: scores.mental / counts.mental,
+    mechanical: scores.mechanical / counts.mechanical,
+    chemical: scores.chemical / counts.chemical,
+    overall: (scores.mental + scores.mechanical + scores.chemical) / (counts.mental + counts.mechanical + counts.chemical)
+  };
+
+  renderChart(averages);
+});
+
+function renderChart(data) {
   document.getElementById("results").classList.remove("hidden");
 
-  const ctx = document.getElementById("resultsChart").getContext("2d");
-  new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: ["Back Pain", "Sitting Hours", "Exercise"],
-      datasets: [{
-        label: "Score Breakdown",
-        data: [q1, q2, q3],
-        backgroundColor: ["#ff6384", "#36a2eb", "#4bc0c0"]
-      }]
-    },
-    options: {
-      scales: {
-        y: { beginAtZero: true, max: 5 }
-      }
-    }
-  });
-});
+  const container = document.getElementById("results");
+  container.innerHTML = `
+    <h2>Your Health Profile</h2>
+    ${renderBar("Overall Health", data.overall)}
+    ${renderBar("Mental Health", data.mental, true)}
+    ${renderBar("Mechanical Health", data.mechanical, true)}
+    ${renderBar("Chemical Health", data.chemical, true)}
+  `;
+}
+
+function renderBar(label, score, small = false) {
+  const height = small ? "20px" : "30px";
+  const fontSize = small ? "14px" : "16px";
+  const filledPercent = (score / 10) * 100;
+
+  return `
+    <div style="margin-bottom: 15px;">
+      <div style="font-size:${fontSize}; margin-bottom: 5px;">${label}: ${score.toFixed(1)}/10</div>
+      <div style="background:#ddd; width:100%; height:${height}; border-radius:5px; overflow:hidden;">
+        <div style="
+          width:${filledPercent}%;
+          height:${height};
+          background: linear-gradient(to right,
+            red 0%, 
+            orange 20%, 
+            yellow 40%, 
+            lightgreen 70%, 
+            green 100%);
+          border-radius:5px;
+        "></div>
+      </div>
+    </div>
+  `;
+}
+
+loadQuestions();

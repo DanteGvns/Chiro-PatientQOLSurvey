@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 900px;
   margin: auto;
   background: white;
   padding: 20px;
@@ -18,12 +18,41 @@ h1, h2 {
 }
 
 .question {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+.scale {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.scale label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+}
+
+.scale input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.scale input[type="radio"]:checked {
+  background-color: #36a2eb;
+  border-color: #36a2eb;
 }
 
 button {
   display: block;
-  margin: 20px auto;
+  margin: 30px auto;
   padding: 10px 20px;
   font-size: 16px;
 }

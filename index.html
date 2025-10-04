@@ -3,45 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chiropractic Wellness Survey</title>
+  <title>Healthy Brain Questionnaire</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>Wellness Survey</h1>
+    <h1>Healthy Brain Questionnaire</h1>
+    <p>If you have any questions, call or text us @ (913) 948-6602</p>
     <form id="surveyForm">
-      <div class="question">
-        <label>How often do you experience back pain?</label><br />
-        <select name="q1">
-          <option value="1">Rarely</option>
-          <option value="3">Sometimes</option>
-          <option value="5">Often</option>
-        </select>
-      </div>
-      <div class="question">
-        <label>How many hours do you sit per day?</label><br />
-        <select name="q2">
-          <option value="1">Less than 4</option>
-          <option value="3">4–8</option>
-          <option value="5">More than 8</option>
-        </select>
-      </div>
-      <div class="question">
-        <label>Do you stretch or exercise regularly?</label><br />
-        <select name="q3">
-          <option value="5">Yes</option>
-          <option value="3">Sometimes</option>
-          <option value="1">No</option>
-        </select>
-      </div>
+      <!-- Questions will be injected here -->
       <button type="submit">Submit</button>
     </form>
 
-    <div id="results" class="hidden">
-      <h2>Your Wellness Score</h2>
-      <canvas id="resultsChart"></canvas>
-    </div>
+    <div id="results" class="hidden"></div>
   </div>
   <script src="script.js"></script>
 </body>
